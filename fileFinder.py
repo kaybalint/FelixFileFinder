@@ -64,7 +64,6 @@ def multipleFiles():
     for items in range(0,len(fileList)):
         oneFile(fileList[items])
   
-userInput = input("Do you want to open one file or multiple? Enter one or multiple: ")
 keyWords = open("keyWords.txt").read().splitlines()
 fileEndings = open("fileEndings.txt").read().splitlines()
 
@@ -88,24 +87,24 @@ else:
 
 
 userFileEndings = input(f"\nThis the current list of file endings being searched: \n{fileEndings}\nDo you want to add anymore to the list? [YES/NO] ")
-if userFileEndings == "YES":
+if userFileEndings.lower() == "yes":
     new_FileEndings = open("FileEndings.txt","a")
-    a = "True"
-    print("Enter the key words, one by one [press Enter], once finished enter DONE.\n")
-    while(a == "True"):
+    a = True
+    print("Enter the key words, one by one [press Enter], once finished enter 'DONE'.\n")
+    while(a is True):
         new_userFileEndings = input("Enter the keyword: ")
-        if new_userFileEndings == "DONE":
+        if new_userFileEndings.lower() == "done":
             a = False
             continue
         new_FileEndings.write(new_userFileEndings+"\n")
         fileEndings.append(new_userFileEndings)
     new_FileEndings.close()
-elif userFileEndings == "NO":
-    next
+elif userFileEndings.lower() == "no":
+    pass
 else:
     print("Invalid input.")
 
-
+userInput = input("Do you want to open one file or multiple? Enter one or multiple: ")
 if userInput.lower() == "one":
     userFile = input("Enter the file name: ")
     oneFile(userFile)
