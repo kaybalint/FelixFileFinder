@@ -10,7 +10,7 @@ ENDC = "\033[0m"
 
 felixFischoeder = open('felix 1.txt').read()
 print(felixFischoeder)
-ascii_banner = pyfiglet.figlet_format("foxy felixs file finder!")
+ascii_banner = pyfiglet.figlet_format("foxy felix's file finder!")
 print(ascii_banner)
 
 
@@ -70,7 +70,7 @@ fileEndings = open("fileEndings.txt").read().splitlines()
 
 
 userKeyWords = input(f"This the current list of key words being searched: \n{keyWords}\nDo you want to add anymore to the list? [YES/NO] ")
-if userKeyWords == "YES":
+if userKeyWords.lower() == "yrs":
     new_keyWords = open("keyWords.txt","a")
     z = "True"
     print("Enter the key words, one by one [press Enter], once finished enter DONE.\n")
@@ -81,8 +81,8 @@ if userKeyWords == "YES":
             continue
         new_keyWords.write(words+"\n")
     new_keyWords.close()
-elif userKeyWords == "NO":
-    next
+elif userKeyWords.lower() == "no":
+    pass
 else:
     print("Invalid input.")
 
@@ -106,11 +106,10 @@ else:
     print("Invalid input.")
 
 
-
 if userInput.lower() == "one":
     userFile = input("Enter the file name: ")
     oneFile(userFile)
 elif userInput.lower() == "multiple":
     multipleFiles()
 else:
-    print("You didn't put the correct input in.")
+    print("Please enter 'one' or 'multiple'.")
