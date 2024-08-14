@@ -14,8 +14,8 @@ ascii_banner = pyfiglet.figlet_format("foxy felixs file finder!")
 print(ascii_banner)
 
 
-#keyWordsList = ["password","token","admin","username","secret","accesskey","secretkey","pwd"]
-#fileEndings = ["txt","html","config","cshtml","xml","aspx"]
+keyWordsList = ["password","token","admin","username","secret","accesskey","secretkey","pwd"]
+fileEndings = ["txt","html","config","cshtml","xml","aspx"]
 
 def oneFile(userFile):
     with ZipFile(userFile, 'r') as zip: 
@@ -114,9 +114,3 @@ elif userInput.lower() == "multiple":
     multipleFiles()
 else:
     print("You didn't put the correct input in.")
-
-
-
-
-
-
