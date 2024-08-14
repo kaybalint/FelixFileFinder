@@ -1,0 +1,6 @@
+txt
+html
+config
+cshtml
+xml
+aspx

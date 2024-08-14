@@ -1,0 +1,8 @@
+password
+token
+admin
+username
+secret
+accesskey
+secretkey
+pwd
